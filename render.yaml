@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: bitcoin-api
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: IBM_KEY
+        sync: false
+      - key: DEPLOY_ID
+        value: 964ce318-2911-4ced-a15e-c4a698923b89
